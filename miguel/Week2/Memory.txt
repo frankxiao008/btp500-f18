@@ -13,6 +13,8 @@ factorial(n: 4): result is in memory address 00AFEB98
 factorial(n: 3): result is in memory address 00AFEAA4
 factorial(n: 2): result is in memory address 00AFE9B0
 factorial(n: 1): result is in memory address 00AFE8BC
+
+//The base case is met and the recursion starts to unwind from here
 factorial(n: 0): result is in memory address 00AFE7C8
 factorial(n: 0): result is in memory address 00AFE7C8
 factorial(n: 0): result is 1
