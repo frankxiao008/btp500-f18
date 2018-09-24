@@ -77,7 +77,7 @@ CacheList<T>& CacheList<T>::operator=(CacheList&& rhs){
 
 
 template <typename T>
-typename CacheList<T>::iterator CacheList<T>::insert(const T& data){
+void CacheList<T>::insert(const T& data){
 
 }
 
