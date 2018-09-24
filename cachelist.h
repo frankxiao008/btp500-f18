@@ -4,7 +4,7 @@ template <typename T>
 class CacheList{
 	struct Node{
 
-		Node(const T& data={},Node* nx=nullptr,Node* pr=nullptr){
+		Node(const T& data=T{},Node* nx=nullptr,Node* pr=nullptr){
 			
 		}
 	};
