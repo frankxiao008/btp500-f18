@@ -41,7 +41,7 @@ public:
 	iterator end();
 	const_iterator cbegin() const;
 	const_iterator cend() const;
-	iterator insert(const T& data);
+	void insert(const T& data);
 	iterator search(const T& data);
 	iterator erase(iterator it);
 	iterator erase(iterator first, iterator last);
