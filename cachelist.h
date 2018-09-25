@@ -87,11 +87,6 @@ typename CacheList<T>::iterator CacheList<T>::search(const T& data){
 }
 
 template <typename T>
-typename CacheList<T>::const_iterator CacheList<T>::search(const T& data) const{
-
-}
-
-template <typename T>
 typename CacheList<T>::iterator CacheList<T>::erase(iterator it){
 
 }
