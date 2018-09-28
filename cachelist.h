@@ -4,7 +4,7 @@ template <typename T>
 class CacheList{
 	struct Node{
 
-		Node(const T& data={},Node* nx=nullptr,Node* pr=nullptr){
+		Node(const T& data=T{},Node* nx=nullptr,Node* pr=nullptr){
 			
 		}
 	};
@@ -41,7 +41,7 @@ public:
 	iterator end();
 	const_iterator cbegin() const;
 	const_iterator cend() const;
-	iterator insert(const T& data);
+	void insert(const T& data);
 	iterator search(const T& data);
 	iterator erase(iterator it);
 	iterator erase(iterator first, iterator last);
@@ -77,17 +77,12 @@ CacheList<T>& CacheList<T>::operator=(CacheList&& rhs){
 
 
 template <typename T>
-typename CacheList<T>::iterator CacheList<T>::insert(const T& data){
+void CacheList<T>::insert(const T& data){
 
 }
 
 template <typename T>
 typename CacheList<T>::iterator CacheList<T>::search(const T& data){
-
-}
-
-template <typename T>
-typename CacheList<T>::const_iterator CacheList<T>::search(const T& data) const{
 
 }
 
