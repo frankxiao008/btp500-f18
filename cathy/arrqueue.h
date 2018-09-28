@@ -7,8 +7,15 @@ class Queue{
 	}
 public:
 	Queue(){
+		theQueue_=new T[13];
+		capacity_=13;
+		used_=0;
 	}
 	void enqueue(const T& data){
+		if(used_==capacity_){
+			grow();
+		}
+		
 	}
 	void dequeue(){
 	}
