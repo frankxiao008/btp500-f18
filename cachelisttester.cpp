@@ -1,11 +1,12 @@
 /*********************************************************************/
 /*                                                                   */
 /* Tester for assignment 1, part 2                                   */
-/* Version 1.0                                                       */
+/* Version 1.01                                                      */
+/*    v1.01: fixed comment about how to compile, no code change.     */
 /* To compile:                                                       */
 /*                                                                   */
 /*                                                                   */
-/*      g++ a1q1main.cpp -std=c++0x                                  */
+/*      g++ cachelisttester.cpp -std=c++0x                           */
 /*                                                                   */
 /*********************************************************************/
 
