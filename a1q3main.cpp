@@ -6,19 +6,10 @@ using namespace std;
 #define VERBOSE 0
 
 /*this tester will test your fill function.
-  You will need the following image files.  You can download from links or
+  You will need the following image files (found in course repo).
+  You can pull from repo then copy over to your folder or
   you can run the submitter once and it will copy all the files you need 
-  into your folder.:
-
-  http://scs.senecac.on.ca/~catherine.leung/a1q3img1.ppm
-  http://scs.senecac.on.ca/~catherine.leung/a1q3img2.ppm
-  http://scs.senecac.on.ca/~catherine.leung/a1q3a.ppm
-  http://scs.senecac.on.ca/~catherine.leung/a1q3b.ppm
-  http://scs.senecac.on.ca/~catherine.leung/a1q3c.ppm
-  http://scs.senecac.on.ca/~catherine.leung/a1q3d.ppm
-  http://scs.senecac.on.ca/~catherine.leung/a1q3e.ppm
-  http://scs.senecac.on.ca/~catherine.leung/a1q3f.ppm
-  http://scs.senecac.on.ca/~catherine.leung/a1q3g.ppm
+  into your folder.
 	
   To compile:
 
