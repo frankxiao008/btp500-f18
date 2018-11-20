@@ -6,12 +6,41 @@ class AVL{
 		T data_;
 		Node* left_;
 		Node* right_;
-		Node(const T& data,Node* left=nullptr, Node* right=nullptr){
+		int height_;  //height of the subtree with
+		              //this node as root
+		Node(const T& data){
 			data_=data;
-			left_=left;
-			right_=right;
+			left_=nullptr;
+			right_=nullptr;
+			height_=1;
+		}
+		void updateHeight(){
+			int heightRight=height(right_);
+			int heightLeft=height(left_);
+			height_=(heightRight>heightLeft)?heightRight+1:heightLeft+1;
 		}
 	};
+	int height(const Node* subtreeroot)const{
+		return (subtreeroot)?subtreeroot->height_:0;
+	}
+	int balance(const Node* subtreeroot)const{
+		return height(subtreeroot->right_)-height(subtreeroot->left_);
+	}
+
+	void leftRotate(Node*& Aptr){
+		Node* Bptr=Aptr->right_;
+		Node* Yptr=Bptr->left_;
+		Bptr->left_=Aptr;
+		Aptr->right_=Yptr;
+		Aptr=Bptr;
+	}
+	void rightRotate(Node*& Aptr){
+		Node* Bptr=Aptr->left_;
+		Node* Yptr=Bptr->right_;
+		Bptr->right_=Aptr;
+		Aptr->left_=Yptr;
+		Aptr=Bptr;
+	}
 	Node* root_;
 	void insert(const T& data,Node*& subtreeroot){
 		if(subtreeroot==nullptr){
@@ -24,6 +53,36 @@ class AVL{
 			else{
 				insert(data,subtreeroot->right_);
 			}
+			int nodeBalance=balance(subtreeroot);
+			if(nodeBalance >=2){
+				//fix with rotations
+				int childBalance=balance(subtreeroot->right_);
+				if(childBalance > 0){
+					leftRotate(subtreeroot);
+					subtreeroot->left_->updateHeight();
+				}
+				else{
+					rightRotate(subtreeroot->right_);
+					leftRotate(subtreeroot);
+					subtreeroot->left_->updateHeight();
+					subtreeroot->right_->updateHeight();
+					//double
+				}
+			}
+			else if (nodeBalance <= -2){
+				int childBalance=balance(subtreeroot->left_);
+				if(childBalance < 0){
+					//single
+				}
+				else{
+					//double
+				}
+
+			}
+			//update height
+			int heightRight=height(subtreeroot->right_);
+			int heightLeft=height(subtreeroot->left_);
+			subtreeroot->updateHeight();
 		}
 
 	}
