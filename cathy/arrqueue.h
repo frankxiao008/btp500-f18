@@ -7,21 +7,20 @@ class Queue{
 	int back_;
 	void grow(){
 		T* tmp=new T[capacity_*2];
-		int j=front_;
-		for(int i=0;i<used_;i++){
+		int j;
+		for(int i=0,j=front_;i<used_;i++,j=(j+1)%capacity_){
 			tmp[i]=theQueue_[j];
-			j=(j+1)%capacity_;
 		}
-		capacity_=capacity_*2;
-		delete []  theQueue_;
+		delete [] theQueue_;
 		theQueue_=tmp;
+		capacity_=capacity_*2;
 		front_=0;
-		back_=used_;		
+		back_=used_;
 	}
 public:
 	Queue(){
-		theQueue_=new T[13];
-		capacity_=13;
+		theQueue_=new T[50];
+		capacity_=50;
 		used_=0;
 		front_=0;
 		back_=0;
@@ -30,28 +29,25 @@ public:
 		if(used_==capacity_){
 			grow();
 		}
-
 		theQueue_[back_]=data;
-		back_=(back_+1)%capacity;
-/*		theQueue_[back_++]=data;
-		if(back_==capacity_)
-			back_=0;*/
+		back_=(back_+1)%capacity_;
 		used_++;
 	}
 	void dequeue(){
-		if(used_!=0){
-			front_=(front_+1)%capacity_;
-/*			front_++;
-			if(front_==capacity_){
-				front_=0;
-			}*/
+		if(!isEmpty()){
 			used_--;
+			front_=(front_+1)%capacity_;
 		}
 	}
 	T front() const{
+		if(!isEmpty()){
+			return theQueue_[front_];
+		}
+		return T{};
 
 	}
 	bool isEmpty() const{
+		return used_==0;
 	}
 	~Queue(){
 		delete [] theQueue_;
