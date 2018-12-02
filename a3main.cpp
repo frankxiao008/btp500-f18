@@ -626,7 +626,7 @@ int main(void){
 
 		}
 		if(isGood){
-			if(cintIterator1 != exampleTree.begin() || intIterator1 != exampleTree.begin()){
+			if(cintIterator1 != exampleTree.cbegin() || intIterator1 != exampleTree.begin()){
 				cout << "Error 5e: (const_)iterator is not going through your tree correct" << endl;
 				cout << "(const_)iterator should be begin()/cbegin()"  << endl;
 				isGood=false;
@@ -812,7 +812,7 @@ int main(void){
 
 		}
 		if(isGood){
-			if(cintIterator1 != exampleTree.begin() || intIterator1 != exampleTree.begin()){
+			if(cintIterator1 != exampleTree.cbegin() || intIterator1 != exampleTree.begin()){
 				cout << "Error 6e: (const_)iterator is not going through your tree correct" << endl;
 				cout << "(const_)iterator should be begin()/cbegin()"  << endl;
 				isGood=false;
